@@ -19,4 +19,15 @@ Sınıflandırma raporunda precision, recall ve f1-score değerleri her iki mode
 
 Sonuç olarak, iki modelin doğruluk oranı aynıdır ancak Scikit-learn modeli optimizasyon açısından çok daha hızlıdır. Ham verinin excel formatına dönüştürülmesi, veri setinin daha kolay analiz edilmesini sağlamıştır. Ayrıca kod kalabalığını önlemek ve modelin çalışmasını kolaylaştırmak için one hot encoding yöntemi kullanılmıştır. Multinomial yerine Bernoulli Naive Bayes kullanımı, verinin varlık/yokluk bazlı olması nedeniyle daha doğru sonuçlar üretmiştir.
 
+Kaynakça :
+
+https://www.youtube.com/watch?v=TLInuAorxqE  
+https://github.com/AssemblyAI-Community/Machine-Learning-From-Scratch/blob/main/06%20NaiveBayes/naive_bayes.py  
+https://www.quora.com/What-is-the-best-way-to-use-continuous-variables-for-a-naive-bayes-classifier-Do-we-need-to-cluster-them-or-leave-for-self-learning-Pls-help  
+https://stackoverflow.com/questions/14254203/mixing-categorial-and-continuous-data-in-naive-bayes-classifier-using-scikit-lea  
+https://www.geeksforgeeks.org/gaussian-naive-bayes/  
+https://www.geeksforgeeks.org/bernoulli-naive-bayes/  
+https://www.geeksforgeeks.org/multinomial-naive-bayes/  
+https://www.youtube.com/watch?v=JjY4NJyUV1I&list=PL3ED48mWmYxrAdWjQlOWzFNaM4gLgry5T&index=19  
+
 Ahmet Tunahan Yalçın 22290665
