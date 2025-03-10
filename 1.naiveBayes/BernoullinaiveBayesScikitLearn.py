@@ -9,7 +9,7 @@ from sklearn.metrics import confusion_matrix, accuracy_score, classification_rep
 from sklearn.naive_bayes import BernoulliNB
 
 # Veriyi içe aktar
-file_path = r"C:\Users\ytuna\OneDrive\Masaüstü\Naive Bayes\Mushroom_Dataset\one_hot_encoded_mushroom_excel.xlsx"
+file_path = "Mushroom_Dataset/one_hot_encoded_mushroom_excel.xlsx"
 df = pd.read_excel(file_path)
 
 # Etiketleri oluştur (0_0 sütunu 1 ise 0, aksi halde 1)
