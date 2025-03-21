@@ -1,69 +1,94 @@
-# Logistic Regression Projesi
+### Logistic Regression Projesi
 
-Bu projede, yetişkin gelir tahmini problemi kapsamında, kişilerin yüksek gelir (>50K) veya düşük gelir (<=50K) sınıflarına ait olup olmadığını belirlemek için Logistic Regression algoritması kullanılmıştır. Uygulama iki farklı şekilde gerçekleştirilmiştir. Birinci yöntem, Scikit-Learn kütüphanesi ile hazır Logistic Regression modeli kullanılarak yapılmıştır. İkinci yöntem ise Python ile elle yazılmış (manual) Logistic Regression algoritması uygulanarak gerçekleştirilmiştir.
+Bu projede, yetişkinlerin gelir durumunu (yüksek gelir >50K ya da düşük gelir <=50K) tahmin etmek için Logistic Regression algoritmasını kullanarak bir model geliştirdim. Projede iki farklı yaklaşım uyguladım: biri Scikit-Learn kütüphanesinin hazır modeli ile, diğeri ise Python kullanarak elle yazdığım (manual) Logistic Regression algoritması ile.
 
-## Veri Seti ve Ön İşleme
+---
 
-- **Veri Seti:**  
-  Adult Income veri seti (UCI Machine Learning Repository) kullanılmıştır.  
-  - Veri seti, demografik bilgiler (yaş, eğitim, çalışma durumu vb.) içeren ve kişilerin gelir durumunu belirten örneklerden oluşmaktadır.
-  - Toplam örnek sayısı 6500 civarında olup, yeterli özellik ve örnek bulunmaktadır.
+### Veri Seti ve Ön İşleme
 
-- **Özellikler ve Dönüşüm:**  
-  - Ham veri, kategorik özelliklerin modelde kullanılabilmesi için one-hot encoding yöntemi ile sayısallaştırılmıştır.
-  - Sayısal özellikler, StandardScaler ile ölçeklendirilmiştir.
-  - Veri seti, stratified train-test split yöntemi kullanılarak eğitim ve test verilerine ayrılmıştır.
+**Veri Seti:**
 
-## Model Uygulaması
+- UCI Machine Learning Repository’den alınan Adult Income veri setini kullandım.
+- Veri seti, yaş, eğitim, çalışma durumu gibi demografik bilgiler içeriyor.
+- Toplam yaklaşık 6500 örnek mevcut; bu, modelleme için yeterli sayıda örnek sağlıyor.
 
-### 1. Scikit-Learn Logistic Regression
+**Ön İşleme Adımları:**
 
-- **Uygulama:**  
-  Scikit-Learn’ün `LogisticRegression` sınıfı kullanılarak model eğitilmiştir.
+- **Kategorik Verilerin Dönüştürülmesi:** Kategorik değişkenler, modelde kullanılabilmesi için one-hot encoding yöntemiyle sayısallaştırıldı.
+- **Özellik Ölçeklendirme:** Sayısal veriler, StandardScaler ile ölçeklendirildi.
+- **Veri Setinin Bölünmesi:** Stratified train-test split yöntemi kullanılarak, veri dengeli bir şekilde eğitim ve test setlerine ayrıldı.
 
-- **Performans Ölçümleri:**  
-  - **Eğitim Süresi:** 0.1402 saniye  
-  - **Test Süresi:** 0.0010 saniye  
-  - **Accuracy:** %85.51  
-  - **Karmaşıklık Matrisi:**  
-    - [4598 doğru negatif, 347 yanlış pozitif]  
-    - [597 yanlış negatif, 971 doğru pozitif]  
-  - **Sınıflandırma Raporu:**  
-    Yeniden hesaplanan precision, recall ve f1-score değerleri her sınıf için raporlanmıştır.
+---
 
-### 2. Manual (Elle Yazılmış) Logistic Regression
+### Model Uygulamaları
+
+#### 1. Scikit-Learn Logistic Regression
 
 - **Uygulama:**  
-  Python kullanılarak sıfırdan, maksimum likelihood estimation tabanlı cost function ve gradient descent algoritması ile Logistic Regression modeli oluşturulmuştur.
+  Scikit-Learn’ün `LogisticRegression` sınıfı ile modelimi oluşturdum ve eğittim.
 
-- **Performans Ölçümleri:**  
-  - **Eğitim Süresi:** 2.6917 saniye  
-  - **Test Süresi:** 0.0000 saniye  
-  - **Accuracy:** %84.46  
-  - **Karmaşıklık Matrisi:**  
-    - [4522 doğru negatif, 423 yanlış pozitif]  
-    - [589 yanlış negatif, 979 doğru pozitif]  
-  - **Sınıflandırma Raporu:**  
-    Modelin performansı detaylı olarak raporlanmıştır.
+- **Performans Ölçümleri:**
+  - **Eğitim Süresi:** 0.1402 saniye
+  - **Test Süresi:** 0.0010 saniye
+  - **Doğruluk Oranı (Accuracy):** %85.51
 
-## Karşılaştırma ve Sonuçlar
+- **Karmaşıklık Matrisi:**  
+  \[
+  \begin{bmatrix}
+  4598 & 347 \\
+  597 & 971 \\
+  \end{bmatrix}
+  \]
+  
+- **Sınıflandırma Raporu:**  
+  Her sınıf için precision, recall ve f1-score değerleri detaylı olarak hesaplandı.
+
+#### 2. Manual (Elle Yazılmış) Logistic Regression
+
+- **Uygulama:**  
+  Python kullanarak sıfırdan, maksimum likelihood estimation tabanlı cost function ve gradient descent algoritmasıyla modelimi oluşturdum.
+
+- **Performans Ölçümleri:**
+  - **Eğitim Süresi:** 2.6917 saniye
+  - **Test Süresi:** 0.0000 saniye
+  - **Doğruluk Oranı (Accuracy):** %84.46
+
+- **Karmaşıklık Matrisi:**  
+  \[
+  \begin{bmatrix}
+  4522 & 423 \\
+  589 & 979 \\
+  \end{bmatrix}
+  \]
+
+- **Sınıflandırma Raporu:**  
+  Modelin performansı detaylı metriklerle raporlandı.
+
+---
+
+### Karşılaştırma ve Sonuçlar
 
 - **Doğruluk Oranı:**  
-  Her iki model de yüksek doğruluk oranları (%85 civarında) elde etmiştir. Scikit-Learn modeli ile elle yazılan model arasında yaklaşık %1’lik bir fark bulunmaktadır.
+  İki model de yaklaşık %85 doğruluk oranı elde etti. Scikit-Learn modelinde %85.51, manuel modelde ise %84.46 gibi benzer sonuçlar görüldü.
 
 - **Eğitim ve Test Süreleri:**  
-  - Scikit-Learn modeli, optimize edilmiş algoritmaları sayesinde çok daha kısa sürede eğitilmiş ve tahmin yapmıştır.
-  - Elle yazılmış model, eğitim süresi açısından daha uzun çalışmış ancak algoritmanın matematiksel mantığını kavramak açısından faydalı bir deneyim sunmuştur.
+  Scikit-Learn modeli, optimize edilmiş algoritmalar sayesinde çok daha hızlı eğitim aldı ve test edildi. Elle yazdığım model ise eğitim süresi bakımından daha uzun sürdü, fakat algoritmanın temel prensiplerini öğrenmek açısından oldukça faydalı oldu.
 
 - **Karmaşıklık Matrisi ve Diğer Metrikler:**  
-  İki modelin karmaşıklık matrisleri ve sınıflandırma raporları oldukça benzerdir. Bu da, her iki yöntemin de benzer performans sergilediğini göstermektedir.
+  Her iki modelin karmaşıklık matrisleri ve sınıflandırma raporları birbirine oldukça yakın performans sergiliyor.
 
-- **Tartışma:**  
-  Scikit-Learn modelinin, ek optimizasyon teknikleri ve yerleşik regularization gibi özelliklerle pratikte çok daha hızlı sonuç verdiği görülmüştür. Ancak, manuel uygulama, algoritmanın temel prensiplerini öğrenmek ve modelin işleyişini daha iyi kavramak için değerli bir yaklaşımdır.
+---
 
-## Sonuç
+### Tartışma
 
-Her iki yöntemde de benzer başarımlara ulaşılmış olup, pratik uygulamalarda Scikit-Learn modeli tercih edilirken, teorik öğrenim açısından manuel uygulama önemli bir referans sağlamaktadır. Proje, veri ön işleme, model eğitimi, performans ölçümü ve sonuçların karşılaştırılması adımlarını kapsamlı bir şekilde ele almıştır.
+Scikit-Learn’ün hazır Logistic Regression modeli, optimize edilmiş algoritmaları ve ek regularization gibi özellikleri sayesinde pratik uygulamalarda tercih ediliyor. Ancak, manuel olarak yazdığım Logistic Regression modelini geliştirirken algoritmanın matematiksel temellerini daha iyi kavradım ve bu süreç, teorik bilgimin pekişmesine yardımcı oldu. İki yöntemin de sonuçlarının birbirine yakın çıkması, doğru veri ön işleme ve model kurulumunun önemini ortaya koydu.
 
-## Kaynakça
+---
 
+### Sonuç
+
+Her iki yaklaşım da başarılı sonuçlar verdi. Pratik uygulamalarda Scikit-Learn modelinin daha hızlı ve etkili olduğu görülürken, teorik öğrenim açısından manuel uygulama önemli bir referans oldu. Projede, veri ön işleme, model eğitimi, performans ölçümü ve sonuçların karşılaştırılması gibi adımları detaylıca ele aldım.
+
+---
+
+Bu rapor, Logistic Regression algoritmasını hem uygulamalı hem de teorik açıdan değerlendirmemi sağlayarak, konuyla ilgili kapsamlı bir bakış açısı sunmaktadır.
