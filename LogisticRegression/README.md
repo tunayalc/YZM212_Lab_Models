@@ -8,7 +8,7 @@ Bu projede, yetişkin gelir tahmini problemi kapsamında, kişilerin yüksek gel
   Adult Income veri seti (UCI Machine Learning Repository) kullanılmıştır.
 
   - Veri seti, demografik bilgiler (yaş, eğitim, çalışma durumu vb.) içeren ve kişilerin gelir durumunu belirten örneklerden oluşmaktadır.
-  - Toplam örnek sayısı 48,842 olup, yeterli özellik ve örnek bulunmaktadır.
+  - Toplam örnek sayısı 35000 civarında olup, yeterli özellik ve örnek bulunmaktadır.
 
 - **Özellikler ve Dönüşüm:**
 
@@ -78,6 +78,8 @@ Bu projede, yetişkin gelir tahmini problemi kapsamında, kişilerin yüksek gel
 Her iki yöntemde de benzer başarımlara ulaşılmış olup, pratik uygulamalarda Scikit-Learn modeli tercih edilirken, teorik öğrenim açısından manuel uygulama önemli bir referans sağlamaktadır. Proje, veri ön işleme, model eğitimi, performans ölçümü ve sonuçların karşılaştırılması adımlarını kapsamlı bir şekilde ele almıştır.
 
 ## Kaynakça
-
-
+https://www.tutorialspoint.com/logistic_regression_in_python/index.htm
+https://www.geeksforgeeks.org/understanding-logistic-regression/?ref=gcse_outind
+https://colab.research.google.com/drive/15aRNx7xF_8q-RG-w88HRXqsEQlbaIaUJ?usp=sharing
+https://www.youtube.com/watch?v=XWXZUQAchco&list=PL3ED48mWmYxrAdWjQlOWzFNaM4gLgry5T&index=10
 
