@@ -32,14 +32,6 @@ Bu projede, yetişkinlerin gelir durumunu (yüksek gelir >50K ya da düşük gel
   - **Test Süresi:** 0.0010 saniye
   - **Doğruluk Oranı (Accuracy):** %85.51
 
-- **Karmaşıklık Matrisi:**  
-  \[
-  \begin{bmatrix}
-  4598 & 347 \\
-  597 & 971 \\
-  \end{bmatrix}
-  \]
-  
 - **Sınıflandırma Raporu:**  
   Her sınıf için precision, recall ve f1-score değerleri detaylı olarak hesaplandı.
 
@@ -52,14 +44,6 @@ Bu projede, yetişkinlerin gelir durumunu (yüksek gelir >50K ya da düşük gel
   - **Eğitim Süresi:** 2.6917 saniye
   - **Test Süresi:** 0.0000 saniye
   - **Doğruluk Oranı (Accuracy):** %84.46
-
-- **Karmaşıklık Matrisi:**  
-  \[
-  \begin{bmatrix}
-  4522 & 423 \\
-  589 & 979 \\
-  \end{bmatrix}
-  \]
 
 - **Sınıflandırma Raporu:**  
   Modelin performansı detaylı metriklerle raporlandı.
