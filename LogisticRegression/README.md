@@ -1,4 +1,4 @@
-### Logistic Regression Projesi
+## Logistic Regression Projesi
 
 Bu projede, yetişkinlerin gelir durumunu (yüksek gelir >50K ya da düşük gelir <=50K) tahmin etmek için Logistic Regression algoritmasını kullanarak bir model geliştirdim. Projede iki farklı yaklaşım uyguladım: biri Scikit-Learn kütüphanesinin hazır modeli ile, diğeri ise Python kullanarak elle yazdığım (manual) Logistic Regression algoritması ile.
 
