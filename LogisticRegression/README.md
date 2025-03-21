@@ -35,7 +35,7 @@ Bu projede, yetişkin gelir tahmini problemi kapsamında, kişilerin yüksek gel
     - 1 sınıfı (>50K Gelir): Precision = 0.74, Recall = 0.62, F1-Score = 0.67
     - Ortalama Accuracy = %85.51
 
-### 2. Manual (Elle Yazılmış) Logistic Regression
+### 2. Manual Logistic Regression
 
 - **Uygulama:**\
   Python kullanılarak sıfırdan, maksimum likelihood estimation tabanlı cost function ve gradient descent algoritması ile Logistic Regression modeli oluşturulmuştur.
