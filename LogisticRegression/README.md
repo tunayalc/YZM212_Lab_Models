@@ -86,4 +86,6 @@ https://colab.research.google.com/drive/15aRNx7xF_8q-RG-w88HRXqsEQlbaIaUJ?usp=sh
 
 https://www.youtube.com/watch?v=XWXZUQAchco&list=PL3ED48mWmYxrAdWjQlOWzFNaM4gLgry5T&index=10
 
+https://archive.ics.uci.edu/dataset/2/adult
+
 Ahmet Tunahan Yalçın 22290665
