@@ -79,7 +79,11 @@ Her iki yöntemde de benzer başarımlara ulaşılmış olup, pratik uygulamalar
 
 ## Kaynakça
 https://www.tutorialspoint.com/logistic_regression_in_python/index.htm
+
 https://www.geeksforgeeks.org/understanding-logistic-regression/?ref=gcse_outind
+
 https://colab.research.google.com/drive/15aRNx7xF_8q-RG-w88HRXqsEQlbaIaUJ?usp=sharing
+
 https://www.youtube.com/watch?v=XWXZUQAchco&list=PL3ED48mWmYxrAdWjQlOWzFNaM4gLgry5T&index=10
 
+Ahmet Tunahan Yalçın 22290665
