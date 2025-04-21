@@ -10,14 +10,14 @@ Veri setleriyle ve model parametreleriyle çalışırken elimizdeki tüm sayıla
 Bu matrisler üzerinde toplama, çarpma, transpoze, tersini alma gibi işlemler yapıyor; ayrıca SVD veya özdeğer–özvektör ayrıştırmasıyla “iç yapıyı” dekompoze ediyoruz.
 
 ### 1.2 Özdeğer (λ)  
-Bir \(A\) matrisinin, belirli bir \(v \neq 0\) vektörünü yalnızca ölçeklendirerek (yönünü değiştirmeden)  
-\[
-A v = \lambda v
-\]  
+Bir **A** matrisinin, belirli bir **v** ≠ 0 vektörünü yalnızca ölçeklendirerek (yönünü değiştirmeden)  
+```
+A v = λ v
+```  
 eşitliğini sağladığı skaler sayıdır.
 
 ### 1.3 Özvektör (v)  
-Yukarıdaki eşitliği sağlayan, yani matris çarpımında sadece \(\lambda\) katsayısı kadar uzayı genişleten veya daraltan vektördür.
+Yukarıdaki eşitliği sağlayan, yani matris çarpımında sadece **λ** katsayısı kadar uzayı genişleten veya daraltan vektördür.
 
 ---
 
@@ -28,7 +28,7 @@ Yukarıdaki eşitliği sağlayan, yani matris çarpımında sadece \(\lambda\) k
 - **Kernel PCA**: Doğrusal olarak ayrılamayan veriyi yüksek boyutlu bir alana geçirip orada PCA uygulayarak doğrusal olmayan ilişkileri yakalar.
 
 ### 2.2 Gürültü Azaltma ve Özellik Çıkarımı  
-- **SVD**: Veri matrisini \(U\,\Sigma\,V^\top\) formuna ayırır; \(\Sigma\)’deki küçük tekil değerleri atarak gereksiz detayları (gürültüyü) elemeyi sağlar.
+- **SVD**: Veri matrisini U Σ Vᵀ formuna ayırır; Σ’deki küçük tekil değerleri atarak gereksiz detayları (gürültüyü) elemeyi sağlar.
 
 ### 2.3 Graf Tabanlı Kümeleme  
 - **Spektral Kümeleme**: Verileri ilişkililik matrisine, oradan da Laplace operatörüne dönüştürür; en küçük özdeğerlere karşılık gelen özvektörleri alıp yeni bir temsilde klasik kümeleme algoritmalarını uygular.
@@ -62,17 +62,16 @@ Yukarıdaki eşitliği sağlayan, yani matris çarpımında sadece \(\lambda\) k
 - https://scikit-learn.org/stable/modules/clustering.html#spectral-clustering  
 - https://en.wikipedia.org/wiki/Eigenface  
 
-
 # NUMPY.LINALG.EIG FONKSİYONU DOKÜMANTASYONU
 
-## 1. NE İŞE YARAR?
-Bir kare matris \(A \in \mathbb{C}^{M \times M}\) için
-\[
-A\,v_i = \lambda_i\,v_i
-\]
+## 1. NE İŞE YARAR?  
+Bir kare matris **A** ∈ ℂ^{M×M} için  
+```
+A v_i = λ_i v_i
+```  
 eşitliğini sağlayan
-- **ÖZDEĞERLER** \(\lambda_i\)
-- **SAĞ ÖZVEKTÖRLER** \(v_i\)
+- **ÖZDEĞERLER** λ_i
+- **SAĞ ÖZVEKTÖRLER** v_i
 
 çiftlerini hesaplar.
 
@@ -83,7 +82,7 @@ eigenvalues, eigenvectors = np.linalg.eig(a)
 - **Parametreler**
   - `a` : Şekil `(..., M, M)` olan kare dizi veya dizi yığını
 - **Dönüş Değerleri**
-  - `eigenvalues` : Şekil `(..., M)` — \(\lambda_1, …, \lambda_M\)
+  - `eigenvalues` : Şekil `(..., M)` — λ_1, …, λ_M
   - `eigenvectors` : Şekil `(..., M, M)` — her sütun, karşılık gelen birim uzunlukta bir sağ özvektör  
 - **Hata**
   - Yakınsamama durumunda `LinAlgError` yükselir.
@@ -95,18 +94,18 @@ eigenvalues, eigenvectors = np.linalg.eig(a)
    - `_assert_stacked_2d(a)` ve `_assert_stacked_square(a)` ile son iki boyutun kare olduğu onaylanır.
 3. **TÜR VE SIGNATURE BELİRLEME**  
    - `_commonType(a)` gerçek/karmaşık durumuna göre uygun NumPy tipi seçer.  
-   - Buna göre `‘d->d’` veya `‘D->D’` gibi bir gufunc imzası (signature) belirlenir.
+   - Buna göre ‘d->d’ veya ‘D->D’ gibi bir gufunc imzası (signature) belirlenir.
 4. **GENELLEŞTİRİLMİŞ UFUNC ÇAĞRISI**  
-   ```python
-   w, v = _umath_linalg.eig(a, signature=signature)
-   ```
+```python
+w, v = _umath_linalg.eig(a, signature=signature)
+```
 5. **SONUCU PAKETLEME**  
    - Dönen `w` (özdeğerler) ve `v` (özvektörler), uygun NumPy tiplere cast edilir.  
    - `EigResult(w, v)` adlı `namedtuple` ile `wrap(...)` üzerinden kullanıcıya geri gönderilir.
 
 ## 4. C/C++ VE FORTRAN (LAPACK) ENTEGRASYONU
 1. **GUFUNC TANIMI**  
-   - Descriptor: `"(m,m)->(m),(m,m)"`  
+   - Descriptor: `(m,m)->(m),(m,m)`  
    - Tür başına sarmalayıcılar: `DOUBLE_eig`, `ZDOUBLE_eig`, vb.
 2. **BELLEK DÜZENLEME**  
    - Girdi matrisleri `linearize_matrix` ile tek boyutlu belleğe aktarılır.  
@@ -136,7 +135,7 @@ EigResult olarak sar, wrap ile geri dön
 
 > **Not:** Bu yapı sayesinde NumPy, esnek bir Python arayüzü ile yüksek performanslı Fortran/LAPACK hesaplamalarını bir arada sunar.
 
-#NumPy Linalg.eig ve Saf Python Özdeğer Hesaplaması: Karşılaştırmalı İnceleme
+# NumPy Linalg.eig ve Saf Python Özdeğer Hesaplaması: Karşılaştırmalı İnceleme
 
 ## PROJE AÇIKLAMASI
 Bu repository, NumPy'nın hazır fonksiyonu (`eig`) kullanmadan kare matrisler için özdeğer hesaplamasını saf Python ile nasıl gerçekleştirdiğini gösterir. Çalışmayı referans alarak tekrardan uygular ve aynı matris üzerinde NumPy `eig` fonksiyonuyla sonuçları karşılaştırır.
@@ -168,4 +167,5 @@ Bu repository, NumPy'nın hazır fonksiyonu (`eig`) kullanmadan kare matrisler i
 
 ## 2. KARŞILAŞTIRMA SONUCU
 
-Görüldüğü üzere NumPy ve saf Python kodu aynı özdeğer kümesini (`{3, 5, 7}`) döndürüyor; custom yöntem Laplace açılımı kullanırken NumPy QR tabanlı algoritmayla hız ve sayısal kararlılık sağlar.
+Görüldüğü üzere NumPy ve saf Python kodu aynı özdeğer kümesini `{3, 5, 7}` döndürüyor; custom yöntem Laplace açılımı kullanırken NumPy QR tabanlı algoritmayla hız ve sayısal kararlılık sağlar.
+
