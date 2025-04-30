@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("C:\\Users\\ytuna\\OneDrive\\Masaüstü\\insurance.csv")
+data = pd.read_csv("insurance.csv")
 data = pd.get_dummies(data, columns=["sex", "smoker", "region"], drop_first=True)
 X = data.drop("charges", axis=1).astype(float).values
 y = data["charges"].values.reshape(-1, 1)
