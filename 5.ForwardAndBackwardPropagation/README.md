@@ -1,4 +1,4 @@
-#Sigorta Ücretleri Tahmini Projesi
+# Sigorta Ücretleri Tahmini Projesi
 
 ## Proje Özeti
 Bu projede, sağlık sigortası ücretlerini tahmin etmek için tek gizli katmanlı bir sinir ağı (neural network) sıfırdan (NumPy ve Pandas kullanarak) uygulanmıştır. Amaç, TensorFlow, Keras veya PyTorch gibi hazır kütüphaneler kullanılmadan bir modelin nasıl eğitildiğini adım adım göstermek, eğitim kaybı ve test sonuçlarını grafiklerle görselleştirmektir.
