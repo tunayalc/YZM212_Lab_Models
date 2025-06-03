@@ -65,5 +65,4 @@ Bu projede, yetişkin gelir tahmini problemi kapsamında, kişilerin yüksek gel
 
 Her iki yöntemde de benzer başarımlara ulaşılmış olup, pratik uygulamalarda Scikit-Learn modeli tercih edilirken, teorik öğrenim açısından manuel uygulama önemli bir referans sağlamaktadır. Proje, veri ön işleme, model eğitimi, performans ölçümü ve sonuçların karşılaştırılması adımlarını kapsamlı bir şekilde ele almıştır.
 
-## Kaynakça
 
